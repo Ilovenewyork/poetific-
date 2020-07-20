@@ -2,6 +2,18 @@
 display:none;
 }
 
+  a {
+    text-align:center;
+    width:33vw;
+    color: inherit;
+    text-decoration: inherit;
+    font-family:sans-serif;
+  }
+  
+  a:hover{
+  background: #a69a9a;
+  }
+
 .navbar {
   display:flex;
   justify-content:space-around;
