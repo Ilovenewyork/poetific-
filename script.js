@@ -61,18 +61,22 @@ btn[11].onclick = function() {
   modal[11].style.display = "block";
 
 }
+btn[12].onclick = function() {
+  modal[12].style.display = "block";
+
+}
 window.onkeydown=function(){
   modal[1].style.display="none";
   modal[0].style.display="none";
   modal[2].style.display="none";
   modal[3].style.display="none";
   modal[4].style.display="none";
-  modal[5].style.display="none";
+  modal[5].style.display="none"
     modal[6].style.display="none";
-    modal[7].style.display="none";
-    modal[8].style.display="none";
-    modal[9].style.display="none";
-    modal[10].style.display="none";
-    modal[11].style.display="none";
-
+  modal[7].style.display="none";
+   modal[8].style.display="none";
+   modal[9].style.display="none";
+   modal[10].style.display="none";
+   modal[11].style.display="none";
+  modal[12].style.display="none";
 }
