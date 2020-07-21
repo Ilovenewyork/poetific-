@@ -82,8 +82,9 @@ window.onkeydown=function(){
 }
 
 
-window.onclick = function(event){
-  modal[1].style.display="none";
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal[1].style.display="none";
   modal[0].style.display="none";
   modal[2].style.display="none";
   modal[3].style.display="none";
@@ -96,5 +97,5 @@ window.onclick = function(event){
    modal[10].style.display="none";
    modal[11].style.display="none";
   modal[12].style.display="none";
+  }
 }
-
