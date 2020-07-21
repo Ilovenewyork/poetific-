@@ -5,13 +5,13 @@ var cancel= document.getElementsByClassName("cancel");
 
 btn[0].onclick = function() {
   modal[0].style.display = "block";
-  cancel.style.display = "block";
+  cancel[0].style.display = "block";
   
 }
 
 btn[1].onclick = function() {
   modal[1].style.display = "block";
- cancel.style.display = "block";
+ cancel[1].style.display = "block";
 }
 
 btn[2].onclick = function() {
@@ -82,7 +82,7 @@ window.onkeydown=function(){
    modal[10].style.display="none";
    modal[11].style.display="none";
   modal[12].style.display="none";
-  cancel.style.display = "block";
+  cancel[0].style.display = "block";
 }
 
 cancel.onclick=function(){
@@ -99,5 +99,5 @@ cancel.onclick=function(){
    modal[10].style.display="none";
    modal[11].style.display="none";
   modal[12].style.display="none";
-  cancel.style.display = "block";
+  cancel[0].style.display = "block";
 }
