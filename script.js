@@ -83,7 +83,7 @@ window.onkeydown=function(){
 
 
 window.onclick = function(event) {
-  if (event.target == modal) {
+  if (event.target != modal) {
     modal[1].style.display="none";
   modal[0].style.display="none";
   modal[2].style.display="none";
