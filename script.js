@@ -1,6 +1,6 @@
 var modal = document.getElementsByClassName("modal");
 var btn = document.getElementsByClassName("container");
-var cancel= document.getElementById("cancel");
+var cancel= document.getElementsByClassName("cancel");
 
 
 btn[0].onclick = function() {
