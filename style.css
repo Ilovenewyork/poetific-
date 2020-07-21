@@ -22,7 +22,8 @@ background-color:red;
   background:gold;
   left:0;
   top:0;
-  position:fixed
+  position:fixed;
+  margin:10px
   
   }
 .headers{
