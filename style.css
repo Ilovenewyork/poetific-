@@ -44,7 +44,7 @@ border-radius:50%;
 }
 
 .container:hover{
-box-shadow:3px 7.5px black
+box-shadow:3px 7.5px grey;
 
 }
 
