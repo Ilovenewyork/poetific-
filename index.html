@@ -1,144 +1,201 @@
 <!DOCTYPE html>
-<html>
-
-
+<html lang="en">
 <head>
-
-<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <title>Poetific: Your Online Poetic Oasis</title>
-<style>
-body, html {
-  height: 100%;
-  background:turquoise;
-  
-}
- @media only screen and (max-width: 600px) {
-  .mo-no-show {
-    display:none;
-  }
-   a{
-   border: 2px gold;
-   }
-} 
-  img{
-  max-width:75vw;
-  
-  
-  }
-  
-  
-  #centre_poem{
-  color:white;
-  font-family:Playfair-Display;
-  text-shadow:1px 2px grey
-  
-  }  
- 
-  #logo{
-  background:orange;
-  border-radius:50%;
-  
-  }
-  
-  a {
-    text-align:center;
-    width:33vw;
-    color: inherit;
-    text-decoration: inherit;
-    font-family:sans-serif;
-  }
-  
-  a:hover{
-  background: #a69a9a;
-  }
+  <link href="https://fonts.googleapis.com/css2?family=Cantarell&display=swap" rel="stylesheet">
+  <style>
+    @keyframes float {
+      0% { transform: translateY(100vh) translateX(0) rotate(0deg); opacity: 0; }
+      5% { opacity: 0.1; }
+      95% { opacity: 0.1; }
+      100% { transform: translateY(-100px) translateX(50px) rotate(5deg); opacity: 0; }
+    }
+    
+    .floating-words {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 0;
+      pointer-events: none;
+    }
+    
+    .word {
+      position: absolute;
+      font-family: 'Cantarell', sans-serif;
+      color: rgba(0, 0, 0, 0.1);
+      font-size: 1.2rem;
+      white-space: nowrap;
+      animation: float linear infinite;
+      animation-duration: 20s;
+      user-select: none;
+    }
+    
+    html {
+      height: 100%;
+    }
+    
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background: url('../turquoise-wave-bg.svg') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Cantarell', sans-serif;
+      color: #3a2e00;
+    }
 
-  #navbar {
-  display:flex;
-  justify-content:space-around;
-  background:turquoise;
-  padding-side:8;
-  border:solid gold 2px;
-  left:0;
-  top:0
-  }
-.parallax { 
-  /* The image used */
-  background-image: url("https://images.unsplash.com/photo-1505142468610-359e7d316be0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=562&q=80");
-  text-align: center;
-  padding-top: 5%;
-  padding-bottom:0;
+    /* NAVBAR */
+    .navbar {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      background: linear-gradient(90deg, #ffd700, #ffcc33);
+      border-bottom: 1px solid #e2c97a;
+      padding: 16px 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+    .navbar a {
+      color: #3a2e00;
+      font-size: 1.1em;
+      text-decoration: none;
+      padding: 6px 18px;
+      border-radius: 6px;
+      transition: background 0.2s, color 0.2s;
+    }
+    .navbar a:hover {
+      background: rgba(255, 255, 255, 0.2);
+      color: #000;
+    }
 
+    /* CONTENT */
+    .content {
+      margin-top: 90px;
+      padding: 20px;
+      text-align: center;
+      flex: 1 0 auto;
+      min-height: calc(100vh - 200px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .poem-container {
+      position: relative;
+      z-index: 1;
+      max-width: 600px;
+      margin: 40px auto;
+      border-radius: 12px;
+    }
+    
+    #centre_poem {
+      background: rgba(255, 255, 255, 0.85);
+      padding: 30px;
+      border-radius: 12px;
+      line-height: 1.8;
+      font-size: 1.1em;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      margin-bottom: 30px;
+    }
+    #logo {
+      max-width: 200px;
+      margin: auto auto 0 auto;
+      display: block;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15));
+    }
 
-  
-  
-
-  /* Full height */
-  height: 100%; 
-
-  /* Create the parallax scrolling effect */
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-#sec2{
-  display:flex
-  background:turquoise;
-  padding-top:0;
-  font-family:serif;
-  item-align:row;
-  text-align:center;
-  
-  
-
-  
-  
-  
-}
-</style>
+    /* FOOTER */
+    footer {
+      text-align: center;
+      font-family: 'Cantarell', sans-serif;
+      color: #3a2e00;
+      background: #fffbe6;
+      padding: 20px 0;
+      border-top: 1px solid #e2c97a;
+      font-size: 0.9em;
+      flex-shrink: 0;
+      margin-top: auto;
+      position: relative;
+      z-index: 1;
+      line-height: 1.6;
+    }
+    
+    footer p {
+      margin: 5px 0;
+    }
+  </style>
 </head>
-<html>
 <body>
-  <!-- Google Tag Manager (noscript) -->
+  <nav class="navbar">
+    <a href="archives.html">Archives</a>
+    <a href="featured.html">Featured</a>
+  </nav>
 
-  <div id="navbar">
-    <a href="archives.html"><p>Archives</p></a>
-    <a href="featured.html"><p>Featured</p></a>
-    <a href="aboutme.html"><p>About Me</p></a>
+  <div class="floating-words" id="floatingWords">
+    <!-- Words will be added by JavaScript -->
+  </div>
+  
+  <script>
+    const words = [
+      'poetry', 'verse', 'sonnet', 'stanza', 'rhyme', 'meter', 'lyric', 'ode', 'haiku', 'epic',
+      'words', 'lines', 'rhythm', 'metaphor', 'simile', 'imagery', 'symbol', 'alliteration',
+      'whisper', 'dream', 'silence', 'moonlight', 'shadow', 'eternal', 'freedom', 'serene',
+      'dawn', 'dusk', 'horizon', 'ocean', 'mountain', 'river', 'forest', 'meadow', 'breeze',
+      'ethereal', 'luminous', 'tranquil', 'mystic', 'wander', 'journey', 'discover', 'create'
+    ];
+
+    const floatingWords = document.getElementById('floatingWords');
+    const numWords = 30;
     
+    for (let i = 0; i < numWords; i++) {
+      const word = document.createElement('div');
+      word.className = 'word';
+      word.textContent = words[Math.floor(Math.random() * words.length)];
+      word.style.left = Math.random() * 100 + 'vw';
+      word.style.animationDelay = (Math.random() * 20) + 's';
+      word.style.animationDuration = (15 + Math.random() * 20) + 's';
+      word.style.fontSize = (0.8 + Math.random() * 1.2) + 'rem';
+      word.style.opacity = Math.random() * 0.1 + 0.05;
+      floatingWords.appendChild(word);
+    }
+  </script>
+  
+  <div class="content">
+    <div class="poem-container">
+      <div id="centre_poem">
+        How does poetry come?<br>
+        Perhaps like the soothing tide<br>
+        Occasional, seasonal<br>
+        The poet does abide<br>
+        Whatever is inside<br>
+        <br>
+        <i>– Madhavendra Thakur, 2020</i>
+
+        <img src="poetific-logo.png" id="logo" alt="Poetific Logo">
+
+      </div>
+      
+
     </div>
-  <br>
-  <div class="parallax" text-align="center">
-    <h1 id="centre_poem">
-    How does poetry come?<br>
-    Perhaps like the soothing tide<br>
-    Occasional, seasonal<br>
-    The poet does abide <br>
-    Whatever is inside<br>
-      -Madhavendra Thakur, 2020
-    </h1>
-    
-    <img src="poetific-logo.png" id="logo">
   </div>
-  <div id="sec2">
-    <img src="poetific-logo-short.png" class="mo-no-show">
-  <h1>
-    <u>Our mission</u>
-   </h1>
-  <h3 >The world is in panic and our lives<br> are uncertain, but in these times, poetry<br> offers a solace. Steady meters and lulling rhymes attempt<br> to help you to lose yourself in an emotion, in a feeling and to just leave the chaos of<br>the current day for just a moment and to immerse yourself in <br>another realm.</h3>
-    
-    <img src="https://freesvg.org/img/Gold-Playful-Elephant.png" width=100 height=100>
-  </div>
-</body>  
-</html>
 
+  <footer>
+    <p>© 2025 Poetific. All rights reserved.</p>
+    <p>Made with ♥ by Madhavendra Thakur</p>
+  </footer>
 
-
-
-
-<script>
-window.scrollTo(0,75)
-</script>
+  <script>
+    window.scrollTo(0, 0);
+  </script>
 </body>
 </html>

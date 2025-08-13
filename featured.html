@@ -1,51 +1,105 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Poetific: Featured</title>
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-<style>
-  a {
-    text-align:center;
-    width:33vw;
-    color: inherit;
-    text-decoration: inherit;
-    font-family:sans-serif;
-  }
-  
-  a:hover{
-  background: #a69a9a;
-  }
-  
-  #poem{
-  border: silver solid 2px;
-  Text-align:center;
-  font-size:20px;
-}
-body{
-  background:turquoise;
-  
-}
-#navbar {
-  display:flex;
-  justify-content:space-around;
-  background:turquoise;
-  padding-side:8;
-  background:gold;
-  left:0;
-  top:0
-  }
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Cantarell&display=swap" rel="stylesheet">
+  <style>
+    html {
+      height: 100%;
+    }
+    
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background: #00c4cc;
+      background: linear-gradient(0deg, #00c4cc 0%, #d9f9f4 100%);
+      background-attachment: fixed;
+      font-family: 'Cantarell', sans-serif;
+      color: #3a2e00;
+    }
 
+    /* NAVBAR */
+    .navbar {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      background: linear-gradient(90deg, #ffd700, #ffcc33);
+      border-bottom: 1px solid #e2c97a;
+      padding: 16px 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+    .navbar a {
+      color: #3a2e00;
+      font-size: 1.1em;
+      text-decoration: none;
+      padding: 6px 18px;
+      border-radius: 6px;
+      transition: background 0.2s, color 0.2s;
+    }
+    .navbar a:hover {
+      background: rgba(255, 255, 255, 0.2);
+      color: #000;
+    }
+
+    /* CONTENT */
+    .content {
+      margin-top: 90px;
+      padding: 20px;
+      text-align: center;
+      flex: 1 0 auto;
+      min-height: calc(100vh - 200px);
+    }
+
+    #poem {
+      text-align: center;
+      font-size: 20px;
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 12px;
+      margin: 20px auto;
+      padding: 30px;
+      max-width: 600px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      font-family: 'Cantarell', sans-serif;
+      color: #3a2e00;
+      background: #fffbe6;
+      padding: 20px 0;
+      border-top: 1px solid #e2c97a;
+      font-size: 0.9em;
+      flex-shrink: 0;
+      margin-top: auto;
+      position: relative;
+      z-index: 1;
+      line-height: 1.6;
+    }
+    
+    footer p {
+      margin: 5px 0;
+    }
 </style>
 
 </head>
 
 <body>
   <div id="navbar">
-    <a href="aboutme.html"><p>About Me</p></a>
-    <a href="archives.html"><p>Archives</p></a>
-    <a href="index.html" ><p font=50px>&#8962;</p></a>
-</div>
+    <div class="navbar">
+      <a href="archives.html">Archives</a>
+      <a href="index.html">Home</a>
+    </div>
 <br><br>
 <div id="poem">
   
@@ -80,10 +134,9 @@ But a dot<br>
   
 </div>
 
+  <footer>
+    <p>© 2025 Poetific. All rights reserved.</p>
+    <p>Made with ♥ by Madhavendra Thakur</p>
+  </footer>
 </body>
-
-
-
-
-
 </html>

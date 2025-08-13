@@ -1,21 +1,165 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css2?family=Cantarell&display=swap" rel="stylesheet">
   <title>Poetific: Poetry Archives</title>
-<link rel="stylesheet" type="text/css" href="style.css">
-</head>
-  <body text-align="center" font-family="Helvetica">
+  <style>
+    html {
+      height: 100%;
+    }
     
-  <div class="navbar">
-    <a href="aboutme.html"><p>About Me</p></a>
-    <a href="featured.html"><p>Featured</p></a>
-    <a href="index.html" ><p>&#8962;</p></a>
-</div>
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background: #00c4cc;
+      background: linear-gradient(0deg, #00c4cc 0%, #d9f9f4 100%);
+      background-attachment: fixed;
+      font-family: 'Cantarell', sans-serif;
+      color: #3a2e00;
+    }
+    /* NAVBAR */
+    .navbar {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      background: linear-gradient(90deg, #ffd700, #ffcc33);
+      border-bottom: 1px solid #e2c97a;
+      padding: 16px 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+    .navbar a {
+      color: #3a2e00;
+      font-size: 1.1em;
+      text-decoration: none;
+      padding: 6px 18px;
+      border-radius: 6px;
+      transition: background 0.2s, color 0.2s;
+    }
+    .navbar a:hover {
+      background: rgba(255, 255, 255, 0.2);
+      color: #000;
+    }
+    /* CONTENT */
+    .content {
+      margin-top: 90px;
+      padding: 20px;
+      text-align: center;
+      flex: 1 0 auto;
+      min-height: calc(100vh - 200px);
+    }
+    #logo {
+      max-width: 200px;
+      margin: 20px auto;
+      display: block;
+    }
+    .secthead {
+      font-size: 2em;
+      color: #333;
+      margin: 30px 0;
+    }
+    .trio {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: stretch;
+      gap: 30px;
+      margin: 20px 0;
+    }
+    .container {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 300px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .container:hover {
+      transform: translateY(-5px);
+    }
+    .standard {
+      max-width: 100%;
+      height: 200px;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 5px;
+      margin-bottom: 15px;
+    }
+    hr {
+      border: 0;
+      height: 1px;
+      background: #e2c97a;
+      max-width: 800px;
+      margin: 40px auto;
+    }
+    /* FOOTER */
+    footer {
+      text-align: center;
+      font-family: 'Cantarell', sans-serif;
+      color: #3a2e00;
+      background: #fffbe6;
+      padding: 20px 0;
+      border-top: 1px solid #e2c97a;
+      font-size: 0.9em;
+      flex-shrink: 0;
+      margin-top: auto;
+      position: relative;
+      z-index: 1;
+      line-height: 1.6;
+    }
+    
+    footer p {
+      margin: 5px 0;
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.7);
+      z-index: 1001;
+      overflow-y: auto;
+    }
+    .modal-content {
+      background: white;
+      margin: 50px auto;
+      padding: 30px;
+      max-width: 600px;
+      border-radius: 10px;
+      position: relative;
+      line-height: 1.6;
+    }
+    .cancel {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 24px;
+      cursor: pointer;
+      color: #a67c00;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <a href="index.html">Home</a>
+    <a href="featured.html">Featured</a>
+  </nav>
 
-<br><br><br>
+  <div class="content">
   <img src="poetific-logo.png" id="logo">
   <h3>Here at Poetific, we aim to provide high-quality online Poetry for all, to give everyone the opportunity to appreciate literature and<br>
   be exposed to the wonderful world of poetry, thus we present to you the Poetry Archives, our store of poetry galore!</h3>
@@ -391,8 +535,9 @@ Yet with agony and pain
   </div>
 
 <script type="text/javascript" src="script.js"></script>
+  <footer>
+    <p>© 2025 Poetific. All rights reserved.</p>
+    <p>Made with ♥ by Madhavendra Thakur</p>
+  </footer>
 </body>
-
-
-
 </html>
